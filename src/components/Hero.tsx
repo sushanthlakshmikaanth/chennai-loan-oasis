@@ -1,6 +1,6 @@
-
 import { Button } from '@/components/ui/button';
-import { Star, Shield, Clock, Users, Phone, MessageCircle, Bot } from 'lucide-react';
+import { Star, Shield, Clock, Users, Phone, MessageCircle } from 'lucide-react';
+import Chatbot from './Chatbot';
 
 const Hero = () => {
   return (
@@ -29,12 +29,7 @@ const Hero = () => {
         >
           <MessageCircle className="w-6 h-6" />
         </a>
-        <button 
-          className="flex items-center justify-center w-16 h-16 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
-          title="Chat with AI Assistant"
-        >
-          <Bot className="w-6 h-6" />
-        </button>
+        <Chatbot />
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
