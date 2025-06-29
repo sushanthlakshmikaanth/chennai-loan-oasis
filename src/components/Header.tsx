@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Phone, MessageCircle, Menu, X } from 'lucide-react';
+import { Phone, MessageCircle, Menu, X, Bot } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,31 +28,33 @@ const Header = () => {
             <a href="#contact" className="text-slate hover:text-emerald transition-colors font-medium">Contact</a>
           </nav>
 
-          {/* Contact Icons & CTA */}
+          {/* Contact Icons & CTA - Right Side */}
           <div className="hidden md:flex items-center space-x-4">
-            <a 
-              href="tel:+918778569102" 
-              className="flex items-center justify-center w-10 h-10 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110"
-              title="Call us"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
-            <a 
-              href="https://wa.me/918778569102" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-10 h-10 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110"
-              title="WhatsApp us"
-            >
-              <MessageCircle className="w-4 h-4" />
-            </a>
-            <button 
-              className="flex items-center justify-center w-10 h-10 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200 hover:scale-110"
-              title="Chat with AI"
-            >
-              <MessageCircle className="w-4 h-4" />
-            </button>
-            <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105">
+            <div className="flex items-center space-x-2 mr-4">
+              <a 
+                href="tel:+918778569102" 
+                className="flex items-center justify-center w-12 h-12 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-md"
+                title="Call us: +91 87785 69102"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://wa.me/918778569102" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-12 h-12 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-md"
+                title="WhatsApp us: +91 87785 69102"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+              <button 
+                className="flex items-center justify-center w-12 h-12 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200 hover:scale-110 shadow-md"
+                title="Chat with AI Assistant"
+              >
+                <Bot className="w-5 h-5" />
+              </button>
+            </div>
+            <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105 shadow-md">
               Get Quote
             </Button>
           </div>
@@ -79,32 +81,32 @@ const Header = () => {
               <a href="#faq" className="text-slate hover:text-emerald transition-colors font-medium">FAQ</a>
               <a href="#contact" className="text-slate hover:text-emerald transition-colors font-medium">Contact</a>
               
-              <div className="flex items-center space-x-4 pt-4">
+              <div className="flex items-center justify-center space-x-4 pt-4">
                 <a 
                   href="tel:+918778569102" 
-                  className="flex items-center justify-center w-10 h-10 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200"
-                  title="Call us"
+                  className="flex items-center justify-center w-12 h-12 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 shadow-md"
+                  title="Call us: +91 87785 69102"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://wa.me/918778569102" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200"
-                  title="WhatsApp us"
+                  className="flex items-center justify-center w-12 h-12 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 shadow-md"
+                  title="WhatsApp us: +91 87785 69102"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <MessageCircle className="w-5 h-5" />
                 </a>
                 <button 
-                  className="flex items-center justify-center w-10 h-10 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200"
-                  title="Chat with AI"
+                  className="flex items-center justify-center w-12 h-12 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200 shadow-md"
+                  title="Chat with AI Assistant"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  <Bot className="w-5 h-5" />
                 </button>
               </div>
               
-              <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 w-full">
+              <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 w-full shadow-md">
                 Get Quote
               </Button>
             </nav>
