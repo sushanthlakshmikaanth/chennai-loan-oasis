@@ -1,10 +1,10 @@
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Phone, MessageCircle } from 'lucide-react';
 
 const FAQ = () => {
   const faqs = [
