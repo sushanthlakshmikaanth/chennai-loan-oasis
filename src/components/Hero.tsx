@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Star, Shield, Clock, Users } from 'lucide-react';
+import { Star, Shield, Clock, Users, Phone, MessageCircle, Bot } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -9,6 +9,32 @@ const Hero = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-72 h-72 bg-emerald/5 rounded-full animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+      </div>
+
+      {/* Contact Icons - Right Side */}
+      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col space-y-4 z-20">
+        <a 
+          href="tel:+918778569102" 
+          className="flex items-center justify-center w-16 h-16 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
+          title="Call us: +91 87785 69102"
+        >
+          <Phone className="w-6 h-6" />
+        </a>
+        <a 
+          href="https://wa.me/918778569102" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center w-16 h-16 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
+          title="WhatsApp us: +91 87785 69102"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </a>
+        <button 
+          className="flex items-center justify-center w-16 h-16 bg-gold/10 text-gold rounded-full hover:bg-gold hover:text-navy transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
+          title="Chat with AI Assistant"
+        >
+          <Bot className="w-6 h-6" />
+        </button>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
