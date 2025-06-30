@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Award, Heart, Shield, TrendingUp } from 'lucide-react';
@@ -69,10 +68,6 @@ const About = () => {
                   </div>
                 </div>
               </div>
-
-              <Button className="bg-emerald hover:bg-emerald/90 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
-                Meet Our Team
-              </Button>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
