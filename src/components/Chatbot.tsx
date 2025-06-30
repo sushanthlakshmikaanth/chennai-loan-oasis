@@ -41,25 +41,23 @@ const Chatbot = ({ trigger, className = "" }: ChatbotProps) => {
   }, [messages]);
 
   const generateResponse = async (userMessage: string): Promise<string> => {
+    console.log('Generating response for:', userMessage);
+    
     try {
-      const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium', {
+      // Try the new Hugging Face Inference API with a more reliable model
+      const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-large', {
         method: 'POST',
         headers: {
           'Authorization': 'Bearer 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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: {
-            past_user_inputs: messages.filter(m => m.isUser).slice(-5).map(m => m.text),
-            generated_responses: messages.filter(m => !m.isUser).slice(-5).map(m => m.text),
-            text: userMessage
-          },
+          inputs: userMessage,
           parameters: {
-            max_length: 150,
-            temperature: 0.8,
+            max_new_tokens: 100,
+            temperature: 0.7,
             do_sample: true,
-            top_p: 0.9,
-            repetition_penalty: 1.1
+            return_full_text: false
           },
           options: {
             wait_for_model: true,
@@ -68,48 +66,56 @@ const Chatbot = ({ trigger, className = "" }: ChatbotProps) => {
         }),
       });
 
+      console.log('API Response status:', response.status);
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error('API Error:', errorData);
+        console.error('API Error:', response.status, response.statusText);
         throw new Error(`API Error: ${response.status}`);
       }
 
       const result = await response.json();
       console.log('API Response:', result);
       
-      // Handle different response formats from Hugging Face
-      if (result.generated_text) {
-        return result.generated_text.replace(userMessage, '').trim();
-      } else if (Array.isArray(result) && result.length > 0 && result[0].generated_text) {
-        return result[0].generated_text.replace(userMessage, '').trim();
-      } else if (result.length > 0 && typeof result[0] === 'string') {
-        return result[0];
-      } else {
-        // Context-aware fallback responses for home loan queries
-        const lowerMessage = userMessage.toLowerCase();
-        
-        if (lowerMessage.includes('loan') || lowerMessage.includes('home') || lowerMessage.includes('mortgage')) {
-          const responses = [
-            "I'd be happy to help with your home loan inquiry! Our rates start from 8.5% for eligible applicants. What's your loan amount requirement?",
-            "For home loans in Chennai, we offer competitive interest rates and flexible terms. Would you like to know about our eligibility criteria?",
-            "We've helped over 1000+ families secure their dream homes. What type of property are you looking to purchase?",
-            "Our home loan process is streamlined with quick approvals. Do you have any specific questions about documentation?",
-            "We offer loans up to ₹5 crores with tenure up to 30 years. What's your monthly income range?"
-          ];
-          return responses[Math.floor(Math.random() * responses.length)];
-        } else if (lowerMessage.includes('rate') || lowerMessage.includes('interest')) {
-          return "Our current home loan interest rates start from 8.5% per annum. The exact rate depends on your credit profile, loan amount, and tenure. Would you like me to connect you with our loan specialist for a personalized quote?";
-        } else if (lowerMessage.includes('eligibility') || lowerMessage.includes('qualify')) {
-          return "Home loan eligibility depends on factors like income, credit score, employment stability, and existing obligations. Generally, you need a minimum credit score of 650 and stable income. Shall I help you with a quick eligibility check?";
-        } else if (lowerMessage.includes('document') || lowerMessage.includes('paper')) {
-          return "Required documents include: Income proof (salary slips/ITR), identity proof (Aadhar/PAN), address proof, bank statements, and property documents. We'll guide you through the complete list once you apply.";
-        } else {
-          return "I'm here to help with your home loan queries! You can ask about interest rates, eligibility, documentation, or loan process. How can I assist you today?";
+      // Handle different response formats
+      if (Array.isArray(result) && result.length > 0) {
+        if (result[0].generated_text) {
+          return result[0].generated_text.trim();
         }
+      } else if (result.generated_text) {
+        return result.generated_text.trim();
       }
+      
+      // Fallback if API doesn't work as expected
+      throw new Error('Invalid response format');
+      
     } catch (error) {
       console.error('Error generating response:', error);
-      return "I apologize for the technical issue. For immediate assistance with home loans, please call us at +91 87785 69102. Our team is ready to help you!";
+      
+      // Context-aware fallback responses for home loan queries
+      const lowerMessage = userMessage.toLowerCase();
+      
+      if (lowerMessage.includes('loan') || lowerMessage.includes('home') || lowerMessage.includes('mortgage')) {
+        const responses = [
+          "I'd be happy to help with your home loan inquiry! Our rates start from 8.5% for eligible applicants. What's your loan amount requirement?",
+          "For home loans in Chennai, we offer competitive interest rates and flexible terms. Would you like to know about our eligibility criteria?",
+          "We've helped over 1000+ families secure their dream homes. What type of property are you looking to purchase?",
+          "Our home loan process is streamlined with quick approvals. Do you have any specific questions about documentation?",
+          "We offer loans up to ₹5 crores with tenure up to 30 years. What's your monthly income range?"
+        ];
+        return responses[Math.floor(Math.random() * responses.length)];
+      } else if (lowerMessage.includes('rate') || lowerMessage.includes('interest')) {
+        return "Our current home loan interest rates start from 8.5% per annum. The exact rate depends on your credit profile, loan amount, and tenure. Would you like me to connect you with our loan specialist for a personalized quote?";
+      } else if (lowerMessage.includes('eligibility') || lowerMessage.includes('qualify')) {
+        return "Home loan eligibility depends on factors like income, credit score, employment stability, and existing obligations. Generally, you need a minimum credit score of 650 and stable income. Shall I help you with a quick eligibility check?";
+      } else if (lowerMessage.includes('document') || lowerMessage.includes('paper')) {
+        return "Required documents include: Income proof (salary slips/ITR), identity proof (Aadhar/PAN), address proof, bank statements, and property documents. We'll guide you through the complete list once you apply.";
+      } else if (lowerMessage.includes('hi') || lowerMessage.includes('hello') || lowerMessage.includes('hey')) {
+        return "Hello! Welcome to Home Loan Chennai. I'm here to assist you with all your home loan needs. How can I help you today?";
+      } else if (lowerMessage.includes('thank') || lowerMessage.includes('thanks')) {
+        return "You're welcome! If you have any more questions about home loans, feel free to ask. You can also call us at +91 87785 69102 for immediate assistance.";
+      } else {
+        return "I'm here to help with your home loan queries! You can ask about interest rates, eligibility, documentation, or loan process. For immediate assistance, please call us at +91 87785 69102.";
+      }
     }
   };
 
