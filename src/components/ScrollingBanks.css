@@ -1,0 +1,65 @@
+
+.scrolling-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.scrolling-content {
+  display: inline-flex;
+  animation: scroll 30s linear infinite;
+  gap: 3rem;
+}
+
+.scrolling-content:hover {
+  animation-play-state: paused;
+}
+
+.bank-card {
+  flex-shrink: 0;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  min-width: 200px;
+  border: 1px solid #f3f4f6;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.bank-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.bank-logo {
+  width: 4rem;
+  height: 4rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(245, 158, 11, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+}
+
+.bank-logo span {
+  color: #1e293b;
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+.bank-card h3 {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

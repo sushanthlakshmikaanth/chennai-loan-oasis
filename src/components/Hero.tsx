@@ -1,9 +1,21 @@
 
 import { Button } from '@/components/ui/button';
 import { Star, Shield, Clock, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Chatbot from './Chatbot';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleGetQuote = () => {
+    navigate('/contact');
+  };
+
+  const handleCalculateEMI = () => {
+    // You can add EMI calculator functionality here later
+    console.log('Calculate EMI clicked');
+  };
+
   return (
     <section id="home" className="relative bg-gradient-to-br from-smoke to-white py-20 lg:py-32 overflow-hidden">
       {/* Animated background elements */}
@@ -40,10 +52,17 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mb-16 justify-center animate-fade-in" style={{animationDelay: '0.6s'}}>
-            <Button className="bg-emerald hover:bg-emerald/90 text-white px-10 py-6 text-xl font-medium rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform">
+            <Button 
+              onClick={handleGetQuote}
+              className="bg-emerald hover:bg-emerald/90 text-white px-10 py-6 text-xl font-medium rounded-xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+            >
               Start Your Journey
             </Button>
-            <Button variant="outline" className="border-2 border-navy text-navy hover:bg-navy hover:text-white px-10 py-6 text-xl font-medium rounded-xl transition-all duration-300 hover:scale-105 transform">
+            <Button 
+              variant="outline" 
+              onClick={handleCalculateEMI}
+              className="border-2 border-navy text-navy hover:bg-navy hover:text-white px-10 py-6 text-xl font-medium rounded-xl transition-all duration-300 hover:scale-105 transform"
+            >
               Calculate EMI
             </Button>
           </div>
