@@ -1,5 +1,6 @@
+
 import { Button } from '@/components/ui/button';
-import { Star, Shield, Clock, Users, Phone, MessageCircle } from 'lucide-react';
+import { Star, Shield, Clock, Users } from 'lucide-react';
 import Chatbot from './Chatbot';
 
 const Hero = () => {
@@ -11,24 +12,8 @@ const Hero = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold/5 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
       </div>
 
-      {/* Contact Icons - Right Side */}
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 hidden lg:flex flex-col space-y-4 z-20">
-        <a 
-          href="tel:+918778569102" 
-          className="flex items-center justify-center w-16 h-16 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
-          title="Call us: +91 87785 69102"
-        >
-          <Phone className="w-6 h-6" />
-        </a>
-        <a 
-          href="https://wa.me/918778569102" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="flex items-center justify-center w-16 h-16 bg-emerald/10 text-emerald rounded-full hover:bg-emerald hover:text-white transition-all duration-200 hover:scale-110 shadow-lg backdrop-blur-sm"
-          title="WhatsApp us: +91 87785 69102"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </a>
+      {/* Chatbot - Bottom Right */}
+      <div className="fixed bottom-8 right-8 z-50">
         <Chatbot />
       </div>
       

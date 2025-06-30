@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, Menu, X } from 'lucide-react';
-import Chatbot from './Chatbot';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,7 +47,6 @@ const Header = () => {
               >
                 <MessageCircle className="w-5 h-5" />
               </a>
-              <Chatbot className="w-12 h-12" />
             </div>
             <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 hover:scale-105 shadow-md">
               Get Quote
@@ -94,7 +92,6 @@ const Header = () => {
                 >
                   <MessageCircle className="w-5 h-5" />
                 </a>
-                <Chatbot className="w-12 h-12" />
               </div>
               
               <Button className="bg-emerald hover:bg-emerald/90 text-white px-6 py-2 rounded-lg transition-all duration-200 w-full shadow-md">
