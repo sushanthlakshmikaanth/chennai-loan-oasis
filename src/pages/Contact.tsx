@@ -46,20 +46,21 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
+      // Create FormData object for FormSubmit
+      const formDataObj = new FormData();
+      formDataObj.append('name', formData.name);
+      formDataObj.append('phone', formData.phone);
+      formDataObj.append('email', formData.email);
+      formDataObj.append('loan-amount', formData.loanAmount);
+      formDataObj.append('message', formData.message);
+      formDataObj.append('_subject', 'New Home Loan Inquiry from Website');
+      formDataObj.append('_captcha', 'false');
+      formDataObj.append('_template', 'table');
+      formDataObj.append('_next', window.location.origin + '/contact');
+
       const response = await fetch('https://formsubmit.co/infoflashloans@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          'loan-amount': formData.loanAmount,
-          message: formData.message,
-          _subject: 'New Home Loan Inquiry from Website',
-          _captcha: 'false'
-        }),
+        body: formDataObj
       });
 
       if (response.ok) {
