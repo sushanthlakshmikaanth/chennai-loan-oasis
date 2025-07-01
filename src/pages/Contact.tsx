@@ -102,7 +102,7 @@ const Contact = () => {
               Ready to Start Your Home Loan Journey?
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Connect with Chennai's most trusted home loan consultants. 
+              Connect with Coimbatore's most trusted home loan consultants. 
               We're here to make your homeownership dreams a reality.
             </p>
           </div>
@@ -118,7 +118,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-white mb-1">Our Office</h4>
-                    <p className="text-gray-300 text-sm md:text-base">123 Anna Salai, Near Landmark<br />Chennai - 600002, Tamil Nadu</p>
+                    <p className="text-gray-300 text-sm md:text-base">123 Anna Salai, Near Landmark<br />Coimbatore - 641001, Tamil Nadu</p>
                   </div>
                 </div>
                 

@@ -7,9 +7,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-serif font-bold mb-4">Home Loan Chennai</h3>
+            <h3 className="text-2xl font-serif font-bold mb-4">Home Loan Coimbatore</h3>
             <p className="text-gray-400 mb-4">
-              Chennai's premier home loan consultancy, helping families achieve 
+              Coimbatore's premier home loan consultancy, helping families achieve 
               their homeownership dreams for over 15 years.
             </p>
             <div className="text-sm text-gray-400">
@@ -42,16 +42,16 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Connect With Us</h4>
             <div className="space-y-2 text-gray-400 text-sm">
-              <div>📍 Anna Salai, Chennai - 600002</div>
+              <div>📍 Anna Salai, Coimbatore - 641001</div>
               <div>📞 +91 98765 43210</div>
-              <div>✉️ info@homeloanchennai.com</div>
+              <div>✉️ infoflashloans@gmail.com</div>
               <div>🕒 Mon-Sat: 9 AM - 7 PM</div>
             </div>
           </div>
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; 2024 Home Loan Chennai. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2024 Home Loan Coimbatore. All rights reserved. | Privacy Policy | Terms of Service</p>
           <p className="mt-2">This is made by projxpt</p>
         </div>
       </div>
