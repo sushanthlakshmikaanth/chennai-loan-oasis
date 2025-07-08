@@ -1,52 +1,45 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 import { 
-  Banknote, 
-  CreditCard, 
-  Shield, 
-  TrendingUp, 
-  Users, 
-  FileText 
+  Home, 
+  Building, 
+  GraduationCap, 
+  User 
 } from 'lucide-react';
 
 const Services = () => {
+  const navigate = useNavigate();
+
+  const handleLearnMore = () => {
+    navigate('/contact');
+  };
+
   const services = [
     {
-      icon: Banknote,
-      title: "Home Purchase Loans",
-      description: "Competitive rates starting from 8.35% for buying your dream home in Chennai",
+      icon: Home,
+      title: "Home Loan",
+      description: "Competitive rates starting from 8.35% for buying your dream home",
       features: ["Up to ₹10 Crores", "90% Financing", "Flexible Tenure"]
     },
     {
-      icon: CreditCard,
-      title: "Home Loan Balance Transfer",
-      description: "Switch to better rates and save thousands on your existing home loan",
-      features: ["Lower Interest Rates", "Top-up Available", "Minimal Documentation"]
+      icon: Building,
+      title: "Business Loan",
+      description: "Fuel your business growth with our flexible business financing solutions",
+      features: ["Quick Approval", "Competitive Rates", "Flexible Repayment"]
     },
     {
-      icon: TrendingUp,
-      title: "Loan Against Property",
-      description: "Unlock the value of your property for business or personal needs",
-      features: ["Quick Approval", "High Loan Amount", "Competitive Rates"]
+      icon: GraduationCap,
+      title: "Education Loan",
+      description: "Invest in your future with our comprehensive education loan packages",
+      features: ["100% Fee Financing", "Moratorium Period", "Tax Benefits"]
     },
     {
-      icon: Shield,
-      title: "Construction Loans",
-      description: "Build your dream home with our flexible construction financing",
-      features: ["Stage-wise Disbursement", "Architect Approval", "Flexible Terms"]
-    },
-    {
-      icon: Users,
-      title: "NRI Home Loans",
-      description: "Specialized home loan solutions for Non-Resident Indians",
-      features: ["NRE/NRO Account", "Overseas Income", "Dedicated Support"]
-    },
-    {
-      icon: FileText,
-      title: "Documentation Support",
-      description: "Complete assistance with paperwork and legal formalities",
-      features: ["Legal Verification", "Document Preparation", "Compliance Check"]
+      icon: User,
+      title: "Personal Loan",
+      description: "Meet your personal financial needs with our hassle-free personal loans",
+      features: ["Instant Approval", "No Collateral", "Minimal Documentation"]
     }
   ];
 
@@ -58,12 +51,12 @@ const Services = () => {
             Comprehensive Loan Solutions
           </h2>
           <p className="text-xl text-slate max-w-3xl mx-auto">
-            From first-time home buyers to seasoned investors, we provide tailored 
-            financial solutions to meet your unique requirements in Chennai's dynamic real estate market.
+            From home loans to business financing, we provide tailored 
+            financial solutions to meet your unique requirements and help you achieve your goals.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-white to-smoke">
               <CardHeader className="pb-4">
@@ -82,7 +75,11 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full border-emerald text-emerald hover:bg-emerald hover:text-white transition-all duration-200">
+                <Button 
+                  onClick={handleLearnMore}
+                  variant="outline" 
+                  className="w-full border-emerald text-emerald hover:bg-emerald hover:text-white transition-all duration-200"
+                >
                   Learn More
                 </Button>
               </CardContent>
@@ -91,8 +88,11 @@ const Services = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button className="bg-navy hover:bg-navy/90 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl">
-            View All Services
+          <Button 
+            onClick={handleLearnMore}
+            className="bg-navy hover:bg-navy/90 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Get Started Today
           </Button>
         </div>
       </div>

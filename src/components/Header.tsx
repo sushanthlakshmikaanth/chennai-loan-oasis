@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone, MessageCircle } from 'lucide-react';
@@ -17,11 +16,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-3 hover:scale-105 transition-transform duration-200">
-            <img 
-              src="/lovable-uploads/02de0b08-8a43-456b-9092-37ae1eccc386.png" 
-              alt="FlashLoans" 
-              className="h-12 w-auto"
-            />
+            <div className="text-2xl font-serif font-bold text-navy">loans.com</div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -35,11 +30,10 @@ const Header = () => {
               </Link>
               <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform group-hover:translate-y-0 translate-y-2">
                 <div className="py-2">
-                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Home Purchase Loans</Link>
-                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Balance Transfer</Link>
-                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Loan Against Property</Link>
-                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Construction Loans</Link>
-                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">NRI Home Loans</Link>
+                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Home Loan</Link>
+                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Business Loan</Link>
+                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Education Loan</Link>
+                  <Link to="/services" className="block px-4 py-2 text-sm text-slate hover:bg-emerald hover:text-white transition-all duration-200 hover:translate-x-1">Personal Loan</Link>
                 </div>
               </div>
             </div>

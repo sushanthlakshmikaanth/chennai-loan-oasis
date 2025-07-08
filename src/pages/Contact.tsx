@@ -99,11 +99,11 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Ready to Start Your Home Loan Journey?
+              Ready to Start Your Loan Journey?
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
-              Connect with Coimbatore's most trusted home loan consultants. 
-              We're here to make your homeownership dreams a reality.
+              Connect with India's most trusted loan consultants. 
+              We're here to make your financial dreams a reality.
             </p>
           </div>
 

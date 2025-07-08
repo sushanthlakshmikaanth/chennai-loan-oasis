@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -7,10 +6,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-serif font-bold mb-4">Home Loan Coimbatore</h3>
+            <h3 className="text-2xl font-serif font-bold mb-4">loans.com</h3>
             <p className="text-gray-400 mb-4">
-              Coimbatore's premier home loan consultancy, helping families achieve 
-              their homeownership dreams for over 15 years.
+              Premier loan consultancy services, helping individuals and businesses 
+              achieve their financial goals for over 15 years.
             </p>
             <div className="text-sm text-gray-400">
               RBI Registration: NBxxxxxx
@@ -20,11 +19,10 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-gray-400">
-              <li><Link to="/services" className="hover:text-emerald transition-colors">Home Purchase Loans</Link></li>
-              <li><Link to="/services" className="hover:text-emerald transition-colors">Balance Transfer</Link></li>
-              <li><Link to="/services" className="hover:text-emerald transition-colors">Loan Against Property</Link></li>
-              <li><Link to="/services" className="hover:text-emerald transition-colors">Construction Loans</Link></li>
-              <li><Link to="/services" className="hover:text-emerald transition-colors">NRI Home Loans</Link></li>
+              <li><Link to="/services" className="hover:text-emerald transition-colors">Home Loan</Link></li>
+              <li><Link to="/services" className="hover:text-emerald transition-colors">Business Loan</Link></li>
+              <li><Link to="/services" className="hover:text-emerald transition-colors">Education Loan</Link></li>
+              <li><Link to="/services" className="hover:text-emerald transition-colors">Personal Loan</Link></li>
             </ul>
           </div>
           
@@ -51,7 +49,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; 2024 Home Loan Coimbatore. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>&copy; 2024 loans.com. All rights reserved. | Privacy Policy | Terms of Service</p>
           <p className="mt-2">This is made by projxpt</p>
         </div>
       </div>
