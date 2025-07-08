@@ -5,52 +5,52 @@ const ScrollingBanks = () => {
   const banks = [
     { 
       name: "State Bank of India", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/SBI-logo.svg/200px-SBI-logo.svg.png",
+      logo: "https://logoeps.com/wp-content/uploads/2013/03/state-bank-of-india-vector-logo.png",
       alt: "SBI Logo"
     },
     { 
       name: "HDFC Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/200px-HDFC_Bank_Logo.svg.png",
+      logo: "https://logoeps.com/wp-content/uploads/2013/03/hdfc-bank-vector-logo.png",
       alt: "HDFC Logo"
     },
     { 
       name: "ICICI Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/200px-ICICI_Bank_Logo.svg.png",
+      logo: "https://logoeps.com/wp-content/uploads/2013/03/icici-bank-vector-logo.png",
       alt: "ICICI Logo"
     },
     { 
       name: "Axis Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Axis_Bank_logo.svg/200px-Axis_Bank_logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Axis-Bank-Logo.png",
       alt: "Axis Logo"
     },
     { 
       name: "Kotak Mahindra Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kotak_Mahindra_Bank_logo.svg/200px-Kotak_Mahindra_Bank_logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/03/Kotak-Mahindra-Bank-Logo.png",
       alt: "Kotak Logo"
     },
     { 
       name: "Punjab National Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Punjab_National_Bank_logo.png/200px-Punjab_National_Bank_logo.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Punjab-National-Bank-PNB-Logo.png",
       alt: "PNB Logo"
     },
     { 
       name: "Bank of Baroda", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Bank_of_Baroda_Logo.svg/200px-Bank_of_Baroda_Logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Bank-of-Baroda-Logo.png",
       alt: "BOB Logo"
     },
     { 
       name: "Canara Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Canara_Bank_logo.svg/200px-Canara_Bank_logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Canara-Bank-Logo.png",
       alt: "Canara Logo"
     },
     { 
       name: "Union Bank of India", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Union_Bank_of_India_Logo.svg/200px-Union_Bank_of_India_Logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Union-Bank-of-India-Logo.png",
       alt: "Union Logo"
     },
     { 
       name: "Indian Bank", 
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Indian_Bank_Logo.svg/200px-Indian_Bank_Logo.svg.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/Indian-Bank-Logo.png",
       alt: "Indian Bank Logo"
     }
   ];
@@ -66,6 +66,18 @@ const ScrollingBanks = () => {
                 alt={bank.alt}
                 className="bank-logo-image"
                 loading="lazy"
+                onError={(e) => {
+                  // Fallback to a simple text logo if image fails
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector('.fallback-text')) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'fallback-text text-xs font-bold text-navy';
+                    fallback.textContent = bank.name.split(' ').map(word => word[0]).join('');
+                    parent.appendChild(fallback);
+                  }
+                }}
               />
             </div>
             <h3>{bank.name}</h3>
