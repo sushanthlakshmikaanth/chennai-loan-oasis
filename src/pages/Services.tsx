@@ -9,7 +9,8 @@ import {
   Building, 
   GraduationCap, 
   User,
-  Building2
+  Building2,
+  TrendingUp
 } from 'lucide-react';
 
 const Services = () => {
@@ -49,6 +50,12 @@ const Services = () => {
       title: "Property Against Loan",
       description: "Leverage your property to secure funds for various financial needs",
       features: ["Lower Interest Rates", "Higher Loan Amount", "Flexible Usage"]
+    },
+    {
+      icon: TrendingUp,
+      title: "Loan Against Securities",
+      description: "Get instant liquidity by pledging your shares, mutual funds, and bonds",
+      features: ["Up to 85% LTV", "Retain Ownership", "Quick Processing"]
     }
   ];
 
