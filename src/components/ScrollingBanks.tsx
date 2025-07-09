@@ -5,52 +5,52 @@ const ScrollingBanks = () => {
   const banks = [
     { 
       name: "State Bank of India", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/state-bank-of-india-vector-logo.png",
+      logo: "https://1000logos.net/wp-content/uploads/2021/05/State-Bank-of-India-logo.png",
       alt: "SBI Logo"
     },
     { 
       name: "HDFC Bank", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/hdfc-bank-vector-logo.png",
+      logo: "https://1000logos.net/wp-content/uploads/2021/04/HDFC-Bank-logo.png",
       alt: "HDFC Logo"
     },
     { 
       name: "ICICI Bank", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/icici-bank-vector-logo.png",
+      logo: "https://1000logos.net/wp-content/uploads/2021/04/ICICI-Bank-logo.png",
       alt: "ICICI Logo"
     },
     { 
       name: "Axis Bank", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Axis-Bank-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Axis_Bank_logo.svg/1200px-Axis_Bank_logo.svg.png",
       alt: "Axis Logo"
     },
     { 
       name: "Kotak Mahindra Bank", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/03/Kotak-Mahindra-Bank-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Kotak_Mahindra_Bank_logo.svg/1200px-Kotak_Mahindra_Bank_logo.svg.png",
       alt: "Kotak Logo"
     },
     { 
       name: "Punjab National Bank", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Punjab-National-Bank-PNB-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Punjab_National_Bank_logo.png",
       alt: "PNB Logo"
     },
     { 
       name: "Bank of Baroda", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Bank-of-Baroda-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Bank_of_Baroda_Logo.svg/1200px-Bank_of_Baroda_Logo.svg.png",
       alt: "BOB Logo"
     },
     { 
       name: "Canara Bank", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Canara-Bank-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Canara_Bank_logo.svg/1200px-Canara_Bank_logo.svg.png",
       alt: "Canara Logo"
     },
     { 
       name: "Union Bank of India", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Union-Bank-of-India-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Union_Bank_of_India_Logo.svg/1200px-Union_Bank_of_India_Logo.svg.png",
       alt: "Union Logo"
     },
     { 
       name: "Indian Bank", 
-      logo: "https://logos-world.net/wp-content/uploads/2021/02/Indian-Bank-Logo.png",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Indian_Bank_Logo.svg/1200px-Indian_Bank_Logo.svg.png",
       alt: "Indian Bank Logo"
     }
   ];
