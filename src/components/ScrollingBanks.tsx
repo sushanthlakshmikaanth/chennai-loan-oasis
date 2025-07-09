@@ -4,54 +4,54 @@ import './ScrollingBanks.css';
 const ScrollingBanks = () => {
   const banks = [
     { 
+      name: "Bank of India", 
+      logo: "/lovable-uploads/75baf55b-56a8-4c34-b3ca-836488e14a74.png",
+      alt: "Bank of India Logo"
+    },
+    { 
+      name: "Central Bank of India", 
+      logo: "/lovable-uploads/75baf55b-56a8-4c34-b3ca-836488e14a74.png",
+      alt: "Central Bank of India Logo"
+    },
+    { 
+      name: "Indian Bank", 
+      logo: "/lovable-uploads/75baf55b-56a8-4c34-b3ca-836488e14a74.png",
+      alt: "Indian Bank Logo"
+    },
+    { 
+      name: "Canara Bank", 
+      logo: "/lovable-uploads/75baf55b-56a8-4c34-b3ca-836488e14a74.png",
+      alt: "Canara Bank Logo"
+    },
+    { 
+      name: "Punjab National Bank", 
+      logo: "/lovable-uploads/75baf55b-56a8-4c34-b3ca-836488e14a74.png",
+      alt: "PNB Logo"
+    },
+    { 
+      name: "Bank of Maharashtra", 
+      logo: "/lovable-uploads/015b83f0-b1d3-4f60-86d2-0919f1c59ea3.png",
+      alt: "Bank of Maharashtra Logo"
+    },
+    { 
+      name: "Bank of Baroda", 
+      logo: "/lovable-uploads/015b83f0-b1d3-4f60-86d2-0919f1c59ea3.png",
+      alt: "Bank of Baroda Logo"
+    },
+    { 
+      name: "Union Bank of India", 
+      logo: "/lovable-uploads/015b83f0-b1d3-4f60-86d2-0919f1c59ea3.png",
+      alt: "Union Bank Logo"
+    },
+    { 
       name: "State Bank of India", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/state-bank-of-india-vector-logo.png",
+      logo: "/lovable-uploads/015b83f0-b1d3-4f60-86d2-0919f1c59ea3.png",
       alt: "SBI Logo"
     },
     { 
       name: "HDFC Bank", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/hdfc-bank-vector-logo.png",
+      logo: "https://logos-world.net/wp-content/uploads/2021/02/HDFC-Bank-Logo.png",
       alt: "HDFC Logo"
-    },
-    { 
-      name: "ICICI Bank", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/icici-bank-vector-logo.png",
-      alt: "ICICI Logo"
-    },
-    { 
-      name: "Axis Bank", 
-      logo: "https://logoeps.com/wp-content/uploads/2013/03/axis-bank-vector-logo.png",
-      alt: "Axis Logo"
-    },
-    { 
-      name: "Kotak Mahindra Bank", 
-      logo: "https://www.kotak.com/content/dam/Kotak/logo/kotak-logo.png",
-      alt: "Kotak Logo"
-    },
-    { 
-      name: "Punjab National Bank", 
-      logo: "https://www.pnbindia.in/images/logo-main.png",
-      alt: "PNB Logo"
-    },
-    { 
-      name: "Bank of Baroda", 
-      logo: "https://www.bankofbaroda.in/-/media/project/bob/countrywebsites/india/images/logo/bob_logo.png",
-      alt: "BOB Logo"
-    },
-    { 
-      name: "Canara Bank", 
-      logo: "https://canarabank.com/images/canara-logo.png",
-      alt: "Canara Logo"
-    },
-    { 
-      name: "Union Bank of India", 
-      logo: "https://www.unionbankofindia.co.in/images/newlogo.png",
-      alt: "Union Logo"
-    },
-    { 
-      name: "Indian Bank", 
-      logo: "https://www.indianbank.in/images/logo.png",
-      alt: "Indian Bank Logo"
     }
   ];
 
@@ -67,7 +67,6 @@ const ScrollingBanks = () => {
                 className="bank-logo-image"
                 loading="lazy"
                 onError={(e) => {
-                  // Enhanced fallback with bank initials
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                   const parent = target.parentElement;
