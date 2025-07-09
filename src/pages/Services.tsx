@@ -8,7 +8,8 @@ import {
   Home, 
   Building, 
   GraduationCap, 
-  User 
+  User,
+  Building2
 } from 'lucide-react';
 
 const Services = () => {
@@ -42,6 +43,12 @@ const Services = () => {
       title: "Personal Loan",
       description: "Meet your personal financial needs with our hassle-free personal loans",
       features: ["Instant Approval", "No Collateral", "Minimal Documentation"]
+    },
+    {
+      icon: Building2,
+      title: "Property Against Loan",
+      description: "Leverage your property to secure funds for various financial needs",
+      features: ["Lower Interest Rates", "Higher Loan Amount", "Flexible Usage"]
     }
   ];
 
@@ -50,7 +57,7 @@ const Services = () => {
       <Header />
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-fade-in">
             <h1 className="text-4xl font-serif font-bold text-navy mb-4">
               Comprehensive Loan Solutions
             </h1>
@@ -60,21 +67,25 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-gradient-to-br from-white to-smoke">
+              <Card 
+                key={index} 
+                className="group hover:shadow-xl transition-all duration-500 border-0 shadow-lg bg-gradient-to-br from-white to-smoke hover:scale-105 transform animate-fade-in hover:-translate-y-2"
+                style={{animationDelay: `${index * 0.1}s`}}
+              >
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 bg-emerald/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald/20 transition-colors duration-300">
-                    <service.icon className="w-8 h-8 text-emerald" />
+                  <div className="w-16 h-16 bg-emerald/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald/20 transition-all duration-300 group-hover:rotate-6 transform">
+                    <service.icon className="w-8 h-8 text-emerald group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-xl font-serif text-navy">{service.title}</CardTitle>
+                  <CardTitle className="text-xl font-serif text-navy group-hover:text-emerald transition-colors duration-300">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate mb-6 leading-relaxed">{service.description}</p>
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center text-sm text-slate">
-                        <div className="w-2 h-2 bg-gold rounded-full mr-3"></div>
+                        <div className="w-2 h-2 bg-gold rounded-full mr-3 animate-pulse"></div>
                         {feature}
                       </li>
                     ))}
@@ -82,13 +93,22 @@ const Services = () => {
                   <Button 
                     onClick={handleLearnMore}
                     variant="outline" 
-                    className="w-full border-emerald text-emerald hover:bg-emerald hover:text-white transition-all duration-200"
+                    className="w-full border-emerald text-emerald hover:bg-emerald hover:text-white transition-all duration-300 hover:scale-105 transform"
                   >
                     Learn More
                   </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          <div className="text-center mt-12 animate-fade-in" style={{animationDelay: '0.8s'}}>
+            <Button 
+              onClick={handleLearnMore}
+              className="bg-navy hover:bg-navy/90 text-white px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform"
+            >
+              Get Started Today
+            </Button>
           </div>
         </div>
       </section>
